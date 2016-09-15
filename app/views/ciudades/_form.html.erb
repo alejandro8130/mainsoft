@@ -1,0 +1,16 @@
+<%= simple_form_for(@ciudad) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-md-3 col-md-offset-4 col-sm-6">
+      <%= f.input :nombre, :label => "Nombre", placeholder: "Nombre Ciudad" %>
+    </div>
+    <div class="col-md-3 col-md-offset-4 col-sm-6">
+      <%= f.association :departamento,prompt:"Seleccione Departamento" %>
+    </div>
+  </div>
+
+  <div class="form-actions col-md-2 col-md-offset-4">
+    <%= f.button :submit, class:"btn btn-success" %>
+  </div>
+<% end %>

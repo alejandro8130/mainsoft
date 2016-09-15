@@ -1,0 +1,9 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @estados_civil.nombre %>
+  </p>
+  
+  <%= link_to 'Editar', edit_estados_civil_path(@estados_civil),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', estados_civiles_path, class:"btn btn-warning" %>
+</div>

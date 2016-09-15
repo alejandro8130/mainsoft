@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Ciudades</span></h1>
+    <br>
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag ciudades_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese nombre para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Departamento</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @ciudades.each do |ciudad| %>
+            <tr>
+              <td><%= ciudad.nombre %></td>
+              <td><%= ciudad.departamento.try(:nombre)  %></td>
+              <td><%= link_to 'Mostrar', ciudad, class:"btn boton-azul" %></td>
+              <td><%= link_to 'Editar', edit_ciudad_path(ciudad), class:"btn boton-amarillo" %></td>
+              <td><%= link_to 'Eliminar', ciudad, method: :delete, data: { confirm: 'Está Seguro?' }, class:"btn boton-rojo" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <%= will_paginate @ciudades, renderer: BootstrapPagination::Rails %>
+
+
+
+      <br>
+      Ciudades: <%= @ciudades.count %>
+      <br>
+
+    </div>  <%= link_to 'Nueva Ciudad', new_ciudad_path, class:"btn boton-verde" %>
+  </div>
+</div>

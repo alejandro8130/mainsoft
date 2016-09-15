@@ -1,0 +1,9 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @tipos_pago.nombre %>
+  </p>
+  
+  <%= link_to 'Editar', edit_tipos_pago_path(@tipos_pago),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', tipos_pagos_path, class:"btn btn-warning" %>
+</div>

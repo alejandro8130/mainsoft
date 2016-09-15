@@ -1,0 +1,131 @@
+                                       Prefix Verb   URI Pattern                                              Controller#Action
+                                       ventas GET    /ventas(.:format)                                        ventas#index
+                                              POST   /ventas(.:format)                                        ventas#create
+                                    new_venta GET    /ventas/new(.:format)                                    ventas#new
+                                   edit_venta GET    /ventas/:id/edit(.:format)                               ventas#edit
+                                        venta GET    /ventas/:id(.:format)                                    ventas#show
+                                              PATCH  /ventas/:id(.:format)                                    ventas#update
+                                              PUT    /ventas/:id(.:format)                                    ventas#update
+                                              DELETE /ventas/:id(.:format)                                    ventas#destroy
+                                     balances GET    /balances(.:format)                                      balances#index
+                                              POST   /balances(.:format)                                      balances#create
+                                   new_balanc GET    /balances/new(.:format)                                  balances#new
+                                  edit_balanc GET    /balances/:id/edit(.:format)                             balances#edit
+                                       balanc GET    /balances/:id(.:format)                                  balances#show
+                                              PATCH  /balances/:id(.:format)                                  balances#update
+                                              PUT    /balances/:id(.:format)                                  balances#update
+                                              DELETE /balances/:id(.:format)                                  balances#destroy
+                                    empleados GET    /empleados(.:format)                                     empleados#index
+                                              POST   /empleados(.:format)                                     empleados#create
+                                 new_empleado GET    /empleados/new(.:format)                                 empleados#new
+                                edit_empleado GET    /empleados/:id/edit(.:format)                            empleados#edit
+                                     empleado GET    /empleados/:id(.:format)                                 empleados#show
+                                              PATCH  /empleados/:id(.:format)                                 empleados#update
+                                              PUT    /empleados/:id(.:format)                                 empleados#update
+                                              DELETE /empleados/:id(.:format)                                 empleados#destroy
+                                       cargos GET    /cargos(.:format)                                        cargos#index
+                                              POST   /cargos(.:format)                                        cargos#create
+                                    new_cargo GET    /cargos/new(.:format)                                    cargos#new
+                                   edit_cargo GET    /cargos/:id/edit(.:format)                               cargos#edit
+                                        cargo GET    /cargos/:id(.:format)                                    cargos#show
+                                              PATCH  /cargos/:id(.:format)                                    cargos#update
+                                              PUT    /cargos/:id(.:format)                                    cargos#update
+                                              DELETE /cargos/:id(.:format)                                    cargos#destroy
+                                  tipos_pagos GET    /tipos_pagos(.:format)                                   tipos_pagos#index
+                                              POST   /tipos_pagos(.:format)                                   tipos_pagos#create
+                               new_tipos_pago GET    /tipos_pagos/new(.:format)                               tipos_pagos#new
+                              edit_tipos_pago GET    /tipos_pagos/:id/edit(.:format)                          tipos_pagos#edit
+                                   tipos_pago GET    /tipos_pagos/:id(.:format)                               tipos_pagos#show
+                                              PATCH  /tipos_pagos/:id(.:format)                               tipos_pagos#update
+                                              PUT    /tipos_pagos/:id(.:format)                               tipos_pagos#update
+                                              DELETE /tipos_pagos/:id(.:format)                               tipos_pagos#destroy
+                                    productos GET    /productos(.:format)                                     productos#index
+                                              POST   /productos(.:format)                                     productos#create
+                                 new_producto GET    /productos/new(.:format)                                 productos#new
+                                edit_producto GET    /productos/:id/edit(.:format)                            productos#edit
+                                     producto GET    /productos/:id(.:format)                                 productos#show
+                                              PATCH  /productos/:id(.:format)                                 productos#update
+                                              PUT    /productos/:id(.:format)                                 productos#update
+                                              DELETE /productos/:id(.:format)                                 productos#destroy
+                                     clientes GET    /clientes(.:format)                                      clientes#index
+                                              POST   /clientes(.:format)                                      clientes#create
+                                   new_client GET    /clientes/new(.:format)                                  clientes#new
+                                  edit_client GET    /clientes/:id/edit(.:format)                             clientes#edit
+                                       client GET    /clientes/:id(.:format)                                  clientes#show
+                                              PATCH  /clientes/:id(.:format)                                  clientes#update
+                                              PUT    /clientes/:id(.:format)                                  clientes#update
+                                              DELETE /clientes/:id(.:format)                                  clientes#destroy
+                                  proveedores GET    /proveedores(.:format)                                   proveedores#index
+                                              POST   /proveedores(.:format)                                   proveedores#create
+                                new_proveedor GET    /proveedores/new(.:format)                               proveedores#new
+                               edit_proveedor GET    /proveedores/:id/edit(.:format)                          proveedores#edit
+                                    proveedor GET    /proveedores/:id(.:format)                               proveedores#show
+                                              PATCH  /proveedores/:id(.:format)                               proveedores#update
+                                              PUT    /proveedores/:id(.:format)                               proveedores#update
+                                              DELETE /proveedores/:id(.:format)                               proveedores#destroy
+                                     ciudades GET    /ciudades(.:format)                                      ciudades#index
+                                              POST   /ciudades(.:format)                                      ciudades#create
+                                   new_ciudad GET    /ciudades/new(.:format)                                  ciudades#new
+                                  edit_ciudad GET    /ciudades/:id/edit(.:format)                             ciudades#edit
+                                       ciudad GET    /ciudades/:id(.:format)                                  ciudades#show
+                                              PATCH  /ciudades/:id(.:format)                                  ciudades#update
+                                              PUT    /ciudades/:id(.:format)                                  ciudades#update
+                                              DELETE /ciudades/:id(.:format)                                  ciudades#destroy
+                                departamentos GET    /departamentos(.:format)                                 departamentos#index
+                                              POST   /departamentos(.:format)                                 departamentos#create
+                             new_departamento GET    /departamentos/new(.:format)                             departamentos#new
+                            edit_departamento GET    /departamentos/:id/edit(.:format)                        departamentos#edit
+                                 departamento GET    /departamentos/:id(.:format)                             departamentos#show
+                                              PATCH  /departamentos/:id(.:format)                             departamentos#update
+                                              PUT    /departamentos/:id(.:format)                             departamentos#update
+                                              DELETE /departamentos/:id(.:format)                             departamentos#destroy
+                                     usuarios GET    /usuarios(.:format)                                      usuarios#index
+                                              POST   /usuarios(.:format)                                      usuarios#create
+                                  new_usuario GET    /usuarios/new(.:format)                                  usuarios#new
+                                 edit_usuario GET    /usuarios/:id/edit(.:format)                             usuarios#edit
+                                      usuario GET    /usuarios/:id(.:format)                                  usuarios#show
+                                              PATCH  /usuarios/:id(.:format)                                  usuarios#update
+                                              PUT    /usuarios/:id(.:format)                                  usuarios#update
+                                              DELETE /usuarios/:id(.:format)                                  usuarios#destroy
+                             tipos_documentos GET    /tipos_documentos(.:format)                              tipos_documentos#index
+                                              POST   /tipos_documentos(.:format)                              tipos_documentos#create
+                          new_tipos_documento GET    /tipos_documentos/new(.:format)                          tipos_documentos#new
+                         edit_tipos_documento GET    /tipos_documentos/:id/edit(.:format)                     tipos_documentos#edit
+                              tipos_documento GET    /tipos_documentos/:id(.:format)                          tipos_documentos#show
+                                              PATCH  /tipos_documentos/:id(.:format)                          tipos_documentos#update
+                                              PUT    /tipos_documentos/:id(.:format)                          tipos_documentos#update
+                                              DELETE /tipos_documentos/:id(.:format)                          tipos_documentos#destroy
+                              estados_civiles GET    /estados_civiles(.:format)                               estados_civiles#index
+                                              POST   /estados_civiles(.:format)                               estados_civiles#create
+                            new_estados_civil GET    /estados_civiles/new(.:format)                           estados_civiles#new
+                           edit_estados_civil GET    /estados_civiles/:id/edit(.:format)                      estados_civiles#edit
+                                estados_civil GET    /estados_civiles/:id(.:format)                           estados_civiles#show
+                                              PATCH  /estados_civiles/:id(.:format)                           estados_civiles#update
+                                              PUT    /estados_civiles/:id(.:format)                           estados_civiles#update
+                                              DELETE /estados_civiles/:id(.:format)                           estados_civiles#destroy
+autocomplete_tipos_documento_nombre_empleados GET    /empleados/autocomplete_tipos_documento_nombre(.:format) empleados#autocomplete_tipos_documento_nombre
+                                              GET    /empleados(.:format)                                     empleados#index
+                                              POST   /empleados(.:format)                                     empleados#create
+                                              GET    /empleados/new(.:format)                                 empleados#new
+                                              GET    /empleados/:id/edit(.:format)                            empleados#edit
+                                              GET    /empleados/:id(.:format)                                 empleados#show
+                                              PATCH  /empleados/:id(.:format)                                 empleados#update
+                                              PUT    /empleados/:id(.:format)                                 empleados#update
+                                              DELETE /empleados/:id(.:format)                                 empleados#destroy
+          autocomplete_cargo_nombre_empleados GET    /empleados/autocomplete_cargo_nombre(.:format)           empleados#autocomplete_cargo_nombre
+                                              GET    /empleados(.:format)                                     empleados#index
+                                              POST   /empleados(.:format)                                     empleados#create
+                                              GET    /empleados/new(.:format)                                 empleados#new
+                                              GET    /empleados/:id/edit(.:format)                            empleados#edit
+                                              GET    /empleados/:id(.:format)                                 empleados#show
+                                              PATCH  /empleados/:id(.:format)                                 empleados#update
+                                              PUT    /empleados/:id(.:format)                                 empleados#update
+                                              DELETE /empleados/:id(.:format)                                 empleados#destroy
+                                         home GET    /home(.:format)                                          static_pages#home
+                                         Home GET    /Home(.:format)                                          static_pages#home
+                            static_pages_home GET    /static_pages/home(.:format)                             static_pages#home
+                            static_pages_help GET    /static_pages/help(.:format)                             static_pages#help
+                           static_pages_about GET    /static_pages/about(.:format)                            static_pages#about
+                            static_pages_ropa GET    /static_pages/ropa(.:format)                             static_pages#ropa
+                      static_pages_accesorios GET    /static_pages/accesorios(.:format)                       static_pages#accesorios
+                                         root GET    /                                                        static_pages#home

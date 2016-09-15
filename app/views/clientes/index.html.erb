@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Clientes</span></h1>
+    <br>
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag clientes_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese nombre para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nro Documento</th>
+            <!--<th>Tipos Documento</th>-->
+            <th>Teléfono</th>
+            <th>Celular</th>
+            <th>Email</th>
+            <!--<th>Dirección</th>-->
+            <!--<th>Ciudad</th>-->
+            <!--<th>Fecha de Nacimiento</th>-->
+            <!--<th>Género</th>-->
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @clientes.each do |client| %>
+            <tr>
+              <td><%= client.nombre %></td>
+              <td><%= client.apellido %></td>
+              <td><%= client.nro_documento %></td>
+              <%#<td><%= client.tipos_documento.try(:nombre)  %>
+              <td><%= client.telefono %></td>
+              <td><%= client.celular %></td>
+              <td><%= client.email %></td>
+              <%#<td><%= client.direccion %></td>
+              <%#<td><%= client.ciudad.try(:nombre)  %>
+              <%#<td><%= client.fecha_nacimiento %</td>
+              <%#<td><%= genero(client.genero) %>
+              <td><%= link_to 'Mostrar', client, class:"btn boton-azul" %></td>
+              <td><%= link_to 'Editar', edit_client_path(client), class:"btn boton-amarillo" %></td>
+              <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Está Seguro?' }, class:"btn boton-rojo" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <%= will_paginate @clientes, renderer: BootstrapPagination::Rails %>
+
+
+
+      <br>
+      Clientes: <%= @clientes.count %>
+      <br>
+
+    </div>  <%= link_to 'Nuevo Cliente', new_client_path, class:"btn boton-verde" %>
+  </div>
+</div>

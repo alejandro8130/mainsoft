@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  saldo_anterior: 1
+  entradas: 1
+  salidas: 1
+  saldo_actual: 1
+  caja_nro: 1
+  empleado: one
+
+two:
+  saldo_anterior: 1
+  entradas: 1
+  salidas: 1
+  saldo_actual: 1
+  caja_nro: 1
+  empleado: two

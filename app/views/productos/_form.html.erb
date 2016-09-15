@@ -1,0 +1,54 @@
+<%= simple_form_for(@producto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 col-sm-6">
+        <div class="col-md-12">
+          <%= f.input :nombre,placeholder:"Nombre" %>
+        </div>
+      </div>
+    
+      <div class="col-md-4 col-sm-6">
+        <div class="col-md-12">
+          <%= f.input :marca,placeholder:"Marca" %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 col-sm-6">
+        <div class="col-md-12">
+          <%= f.input :garantia,:label => "Garantía", as: :datetime_picker, readonly: true,
+            	input_html: {value: producto.garantia.try(:strftime, '%d/%m/%Y'),
+                  	data: {date_options: {format: 'DD/MM/YYYY', ignoreReadonly: true}}},placeholder:"Garantía" %>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-6">
+        <div class="col-md-12">
+          <%= f.association :proveedor,prompt:"Seleccione Proveedor" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 col-sm-6">
+        <div class="col-md-12">
+          <%= f.input :cantidad,placeholder:"Cantidad" %>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-6">
+        <div class="col-md-12">
+          <%= f.input :precio,placeholder:"Precio" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="form-actions col-md-2 col-md-offset-4">
+    <%= f.button :submit, class:"btn btn-success" %>
+  </div>
+  
+<% end %>

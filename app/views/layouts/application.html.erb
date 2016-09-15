@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Mainsoft" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mainsoft" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/roles/navigation' %>
+    </header>
+    <main role="main">      
+      <% if user_signed_in? %>
+        <div class="row">
+          <div class="col-md-2">
+            <%= render 'layouts/roles/nav_vertical' %>
+          </div>
+          <div class="col-md-10">
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>      
+        </div>
+      <% else %>
+        <div class="row">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      <% end %>
+    </main>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

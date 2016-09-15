@@ -1,0 +1,39 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Fecha:</strong>
+    <%= @venta.fecha %>
+  </p>
+  
+  <p>
+    <strong>Hora:</strong>
+    <%= @venta.hora %>
+  </p>
+  
+  <p>
+    <strong>Total:</strong>
+    <%= @venta.total %>
+  </p>
+  
+  <p>
+    <strong>Tipo de Pago:</strong>
+    <%= @venta.tipos_pago %>
+  </p>
+  
+  <p>
+    <strong>Empleado:</strong>
+    <%= @venta.empleado %>
+  </p>
+  
+  <p>
+    <strong>Cliente:</strong>
+    <%= @venta.cliente %>
+  </p>
+  
+  <p>
+    <strong>Hora de Registro:</strong>
+    <%= @venta.created_at  %> <%# ESTE CAMPOS ESTÁ POR DEFECTO Y ES PARA MOSTRAR LA FECHA%>
+  </p>
+  
+  <%= link_to 'Editar', edit_venta_path(@venta),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', ventas_path, class:"btn btn-warning" %>
+</div>

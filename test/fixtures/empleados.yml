@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  nro_documento: MyString
+  tipos_documento: one
+  cargo: one
+  telefono: MyString
+  celular: MyString
+  email: MyString
+  direccion: MyString
+  ciudad: one
+  estados_civil: one
+  inicio_contrato: 2016-07-05
+  fin_contrato: 2016-07-05
+  hora_entrada: 2016-07-05 23:47:11
+  hora_salida: 2016-07-05 23:47:11
+  fecha_nacimiento: 2016-07-05
+  genero: false
+  factor_rh: MyString
+  usuario: one
+
+two:
+  nombre: MyString
+  apellido: MyString
+  nro_documento: MyString
+  tipos_documento: two
+  cargo: two
+  telefono: MyString
+  celular: MyString
+  email: MyString
+  direccion: MyString
+  ciudad: two
+  estados_civil: two
+  inicio_contrato: 2016-07-05
+  fin_contrato: 2016-07-05
+  hora_entrada: 2016-07-05 23:47:11
+  hora_salida: 2016-07-05 23:47:11
+  fecha_nacimiento: 2016-07-05
+  genero: false
+  factor_rh: MyString
+  usuario: two

@@ -1,0 +1,66 @@
+<%# ------Esta linea notice se borra para evitar el doble mensaje, ya que bootstrap crea uno%>
+<%#<p id="notice"><%= notice </p>%>
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Productos</span></h1>
+    <br>
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag productos_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese nombre para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Garantía</th>
+            <th>Proveedor</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @productos.each do |producto| %>
+            <tr>
+              <td><%= producto.nombre %></td>
+              <td><%= producto.marca %></td>
+              <td><%= producto.garantia %></td>
+              <td><%= producto.proveedor.try(:nombre)  %></td>
+              <td><%= producto.cantidad %></td>
+              <td><%= producto.precio %></td>
+              <td><%= link_to 'Mostrar', producto, class:"btn boton-azul" %></td>
+              <td><%= link_to 'Editar', edit_producto_path(producto), class:"btn boton-amarillo" %></td>
+              <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: 'Está seguro?' }, class:"btn boton-rojo" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+      <br>
+      <%= will_paginate @productos, renderer: BootstrapPagination::Rails %>
+
+
+
+      <br>
+      Productos: <%= @productos.count %>
+      <br>
+
+    </div><%= link_to 'Nuevo Producto', new_producto_path, class:"btn boton-verde" %>
+  </div>
+</div>

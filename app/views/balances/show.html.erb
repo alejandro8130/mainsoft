@@ -1,0 +1,34 @@
+<div class="col-md-offset-5">
+  <p>
+    <strong>Saldo Anterior:</strong>
+    <%= @balance.saldo_anterior %>
+  </p>
+  
+  <p>
+    <strong>Entradas:</strong>
+    <%= @balance.entradas %>
+  </p>
+  
+  <p>
+    <strong>Salidas:</strong>
+    <%= @balance.salidas %>
+  </p>
+  
+  <p>
+    <strong>Saldo Actual:</strong>
+    <%= @balance.saldo_actual %>
+  </p>
+  
+  <p>
+    <strong>Caja Nro:</strong>
+    <%= @balance.caja_nro %>
+  </p>
+  
+  <p>
+    <strong>Empleado:</strong>
+    <%= @balance.empleado.try(:nombre)  %>
+  </p>
+  
+  <%#<%= link_to 'Editar', edit_balanc_path(@balanc),class:"btn btn-info" %> 
+  <%= link_to 'Atrás', balances_path, class:"btn btn-warning" %>
+</div>

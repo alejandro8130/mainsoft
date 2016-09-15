@@ -1,0 +1,9 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @departamento.nombre %>
+  </p>
+  
+  <%= link_to 'Editar', edit_departamento_path(@departamento),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', departamentos_path, class:"btn btn-warning" %>
+</div>

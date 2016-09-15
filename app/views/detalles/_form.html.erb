@@ -1,0 +1,14 @@
+<%= simple_form_for(@detalle) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :producto %>
+    <%= f.input :cantidad_producto %>
+    <%= f.input :valor %>
+    <%= f.association :venta %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

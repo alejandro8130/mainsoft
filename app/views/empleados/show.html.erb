@@ -1,0 +1,99 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @empleado.nombre %>
+  </p>
+  
+  <p>
+    <strong>Apellido:</strong>
+    <%= @empleado.apellido %>
+  </p>
+  
+  <p>
+    <strong>Nro Documento:</strong>
+    <%= @empleado.nro_documento %>
+  </p>
+  
+  <p>
+    <strong>Tipo de Documento:</strong>
+    <%= @empleado.tipos_documento.try(:nombre)  %>
+  </p>
+  
+  <p>
+    <strong>Cargo:</strong>
+    <%= @empleado.cargo.try(:nombre) %>
+  </p>
+  
+  <p>
+    <strong>Teléfono:</strong>
+    <%= @empleado.telefono %>
+  </p>
+  
+  <p>
+    <strong>Celular:</strong>
+    <%= @empleado.celular %>
+  </p>
+  
+  <p>
+    <strong>Email:</strong>
+    <%= @empleado.email %>
+  </p>
+  
+  <p>
+    <strong>Dirección:</strong>
+    <%= @empleado.direccion %>
+  </p>
+  
+  <p>
+    <strong>Ciudad:</strong>
+    <%= @empleado.ciudad.try(:nombre) %>
+  </p>
+  
+  <p>
+    <strong>Estado Civil:</strong>
+    <%= @empleado.estados_civil.try(:nombre) %>
+  </p>
+  
+  <p>
+    <strong>Inicio Contrato:</strong>
+    <%= @empleado.inicio_contrato %>
+  </p>
+  
+  <p>
+    <strong>Fin Contrato:</strong>
+    <%= @empleado.fin_contrato %>
+  </p>
+  
+  <p>
+    <strong>Hora Entrada:</strong>
+    <%= @empleado.hora_entrada %>
+  </p>
+  
+  <p>
+    <strong>Hora Salida:</strong>
+    <%= @empleado.hora_salida %>
+  </p>
+  
+  <p>
+    <strong>Fecha de Nacimiento:</strong>
+    <%= @empleado.fecha_nacimiento %>
+  </p>
+  
+  <p>
+    <strong>Género:</strong>
+    <%= genero(@empleado.genero) %>
+  </p>
+  
+  <p>
+    <strong>Factor RH:</strong>
+    <%= @empleado.factor_rh %>
+  </p>
+  
+  <p>
+    <strong>Usuario:</strong>
+    <%= @empleado.usuario.try(:nombre_usuario) %>
+  </p>
+  
+  <%= link_to 'Editar', edit_empleado_path(@empleado),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', empleados_path, class:"btn btn-warning" %>
+</div>

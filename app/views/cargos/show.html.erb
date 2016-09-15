@@ -1,0 +1,14 @@
+<div class="col-md-offset-5">
+  <p>
+    <strong>Nombre:</strong>
+    <%= @cargo.nombre %>
+  </p>
+  
+  <p>
+    <strong>Salario Devengado:</strong>
+    <%= @cargo.salario_devengado %>
+  </p>
+  
+  <%= link_to 'Editar', edit_cargo_path(@cargo),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', cargos_path, class:"btn btn-warning" %>
+</div>

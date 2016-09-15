@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="colorfooter">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-6">
+          <h4 class="Texto-contactenos text-center">Contáctanos</h4>
+          <p class="Texto-Footer text-center">Dirección: TRANSVERSAL 33 SUR 39-17, 00000 Envigado<br>
+           Horario: lun-sáb: 10:00-9:00<br>
+           Teléfono: 311 7318802<br>
+           Correo electrónico: maindedieu11@hotmail.com
+          </p>
+        </div>
+          
+          <div class="col-md-1">
+            <%= image_tag ('Logo Adidas.png'), class:"img-responsive img-adidas-fo" %>
+            <%= image_tag ('Logo Nike.png'), class:"img-responsive col-md-offset-1 imagenes-footer" %>
+            <%= image_tag ('Logo Kushbrand.png'),class:"img-responsive col-md-offset-1 imagenes-footer" %>
+          </div>
+          
+          
+          <div class="col-md-5">
+            <br>
+            <%= image_tag ('LOGO MAWTECH.png'), class:"img-responsive imagen-mawtech" %>
+            <br>
+            <p class="Texto-Footer text-center">Mainsoft Desarrollado por <%= 
+            link_to 'MAWTECH', 'static_pages/about', target: "_blank" %> Copyright © 
+            2016 - <%= link_to 'Ayuda', 'static_pages/help', target: "_blank" %> </p>
+          </div>
+        </div>
+    </div>
+  </div>
+</footer>

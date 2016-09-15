@@ -1,0 +1,14 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre de Usuario:</strong>
+    <%= @usuario.nombre_usuario %>
+  </p>
+  
+  <p>
+    <strong>Contraseña:</strong>
+    <%= @usuario.contrasena %>
+  </p>
+  
+  <%= link_to 'Editar', edit_usuario_path(@usuario),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', usuarios_path, class:"btn btn-warning" %>
+</div>

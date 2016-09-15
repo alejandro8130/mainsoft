@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Empleados</span></h1>
+    <br>
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag empleados_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese nombre para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Nro documento</th>
+          <!--<th>Tipo Documento</th>-->
+          <th>Cargo</th>
+          <th>Teléfono</th>
+          <th>Celular</th>
+          <th>Email</th>
+          <!--<th>Dirección</th>-->
+          <!--<th>Ciudad</th>-->
+          <!--<th>Estado Civil</th>-->
+          <!--<th>Inicio Contrato</th>-->
+          <!--<th>Fin Contrato</th>-->
+          <!--<th>Hora Entrada</th>-->
+          <!--<th>Hora Salida</th>-->
+          <!--<th>Fecha de Nacimiento</th>-->
+          <!--<th>Género</th>-->
+          <!--<th>Factor RH</th>-->
+          <!--<th>Usuario</th>-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @empleados.each do |empleado| %>
+          <tr>
+            <td><%= empleado.nombre %></td>
+            <td><%= empleado.apellido %></td>
+            <td><%= empleado.nro_documento %></td>
+            <%#<td><%= empleado.tipos_documento.try(:nombre) %>
+            <td><%= empleado.cargo.try(:nombre) %></td>
+            <td><%= empleado.telefono %></td>
+            <td><%= empleado.celular %></td>
+            <td><%= empleado.email %></td>
+            <%#<td><%= empleado.direccion %>
+            <%#<td><%= empleado.ciudad.try(:nombre) %>
+            <%#<td><%= empleado.estados_civil.try(:nombre) %>
+            <%#<td><%= empleado.inicio_contrato %>
+            <%#<td><%= empleado.fin_contrato %>
+            <%#<td><%= empleado.hora_entrada %>
+            <%#<td><%= empleado.hora_salida %>
+            <%#<td><%= empleado.fecha_nacimiento %>
+            <%#<td><%= genero(empleado.genero) %>
+            <%#<td><%= empleado.factor_rh %>
+            <%#<td><%= empleado.usuario.try(:nombre_usuario) %>
+            <td><%= link_to 'Mostrar', empleado, class:"btn boton-azul" %></td>
+            <td><%= link_to 'Editar', edit_empleado_path(empleado), class:"btn boton-amarillo" %></td>
+            <td><%= link_to 'Eliminar', empleado, method: :delete, data: { confirm: 'Está Seguro?' }, class:"btn boton-rojo" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <%= will_paginate @empleados, renderer: BootstrapPagination::Rails %>
+
+
+
+    <br>
+    Empleados: <%= @empleados.count %>
+    <br>
+
+    </div>  <%= link_to 'Nuevo Empleado', new_empleado_path, class:"btn boton-verde" %>
+  </div>
+</div>

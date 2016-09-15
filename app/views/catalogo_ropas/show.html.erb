@@ -1,0 +1,22 @@
+<div class="col-md-offset-5">
+  <p>
+    <strong>Nombre:</strong>
+    <%= @catalogo_ropa.nombre %>
+  </p>
+</div>
+
+<p>
+  <%= image_tag @catalogo_ropa.photo.url(:medium)  %>
+</p>
+  
+<div class="col-md-offset-5">
+  <p>
+    <strong>Valor:</strong>
+    <%= @catalogo_ropa.valor %>
+  </p>
+  
+  <%= link_to 'Editar', edit_catalogo_ropa_path(@catalogo_ropa),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', catalogo_ropas_path, class:"btn btn-warning" %>
+</div>
+
+

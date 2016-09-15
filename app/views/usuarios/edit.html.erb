@@ -1,0 +1,10 @@
+<div class="container bordes-form">
+    <div class="row">
+        <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Editar Usuario</span></h1><hr>
+
+        <%= render 'form', usuario: @usuario %>
+        
+        <%= link_to 'Mostrar', @usuario, class:"col-md-1 btn btn-info" %> 
+        <%= link_to 'Atrás', usuarios_path, class:"col-md-1 col-md-offset-1 btn btn-warning" %>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="col-md-offset-5">  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @tipos_documento.nombre %>
+  </p>
+  
+  <%= link_to 'Editar', edit_tipos_documento_path(@tipos_documento),class:"btn btn-info" %> |
+  <%= link_to 'Atrás', tipos_documentos_path, class:"btn btn-warning" %>
+</div>

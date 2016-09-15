@@ -1,0 +1,16 @@
+<%= simple_form_for(@cargo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-md-3 col-md-offset-4 col-sm-6">
+      <%= f.input :nombre, :label => "Nombre del Cargo", placeholder: "Cargo" %>
+    </div>
+    
+    <div class="col-md-3 col-md-offset-4 col-sm-6">
+      <%= f.input :salario_devengado, :label => "Salario Devengado", placeholder: "Salario" %>
+    </div>
+  </div>
+    <div class="form-actions col-md-2 col-md-offset-4">
+      <%= f.button :submit, class:"btn btn-success" %>
+    </div>
+<% end %>

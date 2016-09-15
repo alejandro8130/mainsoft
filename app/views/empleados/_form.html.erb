@@ -1,0 +1,150 @@
+<%= simple_form_for(@empleado) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <div class="row">
+      
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :nombre , placeholder: "Nombre"%>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :apellido, placeholder: "Apellido" %>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :nro_documento, :label => "Nro Documento", placeholder: "Nro Documento" %>
+          </div>
+        </div>
+    </div>
+    
+     <div class="col-md-12">
+       <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.association :tipos_documento, placeholder: "Tipo de Documento", prompt: "Seleccione Tipo de Documento", label: "Tipo de Documento"  %>
+          </div>    
+        </div>   
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+              <%= f.association :cargo, placeholder: "Cargo", prompt: "Seleccione Cargo", label: "Cargo"  %>
+          </div>    
+        </div>    
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :telefono, :label => "Teléfono", placeholder: "Teléfono" %>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :celular, :label => "Celular", placeholder: "Celular" %>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">
+            <%= f.input :email, :label => "Email", placeholder: "Email" %>
+          </div>
+        </div>  
+           
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11">    
+            <%= f.input :direccion, :label => "Dirección", placeholder: "Dirección" %>
+          </div>
+        </div> 
+      </div>
+    
+    
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :ciudad_nombre, :url => autocomplete_ciudad_nombre_empleados_path, :as => :autocomplete, placeholder: "Ciudad", prompt: "Seleccione Ciudad",label:"Ciudad" %>
+          </div>
+        </div>  
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.association :estados_civil, :label => "Estado Civil", prompt: "Seleccione Estado Civil"  %>
+          </div>
+        </div> 
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :inicio_contrato,:label => "Inicio de Contrato", as: :datetime_picker, readonly: true,
+              	input_html: {value: empleado.inicio_contrato.try(:strftime, '%d/%m/%Y'),
+                data: {date_options: {format: 'DD/MM/YYYY', ignoreReadonly: true}}},placeholder:"Inicio de Contrato" %>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :fin_contrato,:label => "Fin de Contrato", as: :datetime_picker, readonly: true,
+              	input_html: {value: empleado.fin_contrato.try(:strftime, '%d/%m/%Y'),
+                    	data: {date_options: {format: 'DD/MM/YYYY', ignoreReadonly: true}}},placeholder:"Fin de Contrato"%>
+          </div>
+        </div> 
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :hora_entrada, :label => "Hora de Entrada" %>
+          </div>
+        </div> 
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :hora_salida, :label => "Hora de Salida" %>
+          </div>
+        </div>
+      </div>
+   
+    
+     <div class="col-md-12">
+       <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :fecha_nacimiento,:label => "Fecha de Nacimiento", as: :datetime_picker, readonly: true,
+              	input_html: {value: empleado.fecha_nacimiento.try(:strftime, '%d/%m/%Y'),
+                data: {date_options: {format: 'DD/MM/YYYY', ignoreReadonly: true}}},placeholder:"Fecha de Nacimiento" %>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :genero, collection: [['Masculino', true], ['Femenino', false]],item_label_class: 'checkbox-inline', item_wrapper_tag: false, prompt: "Seleccione Género",:label => "Género" %>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="col-md-11"> 
+            <%= f.input :factor_rh, :label => "Factor RH",placeholder:"Factor RH" %>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-12">
+        <div class="col-md-10 col-sm-6">
+          <div class="col-md-4"> 
+            <%= f.association :usuario, prompt: "Seleccione Usuario" %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="form-actions col-md-2 col-md-offset-4">
+    <%= f.button :submit, class:"btn btn-success" %>
+  </div>
+<% end %>

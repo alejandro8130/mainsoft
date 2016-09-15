@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Balances de Caja</span></h1>
+    <br>
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag balances_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese empleado para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Saldo Anterior</th>
+            <th>Entradas</th>
+            <th>Salidas</th>
+            <th>Saldo Actual</th>
+            <th>Caja Nro</th>
+            <th>Empleado</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @balances.each do |balance| %>
+            <tr>
+              <td><%= balance.saldo_anterior %></td>
+              <td><%= balance.entradas %></td>
+              <td><%= balance.salidas %></td>
+              <td><%= balance.saldo_actual %></td>
+              <td><%= balance.caja_nro %></td>
+              <td><%= balance.empleado.try(:nombre)  %></td>
+              <td><%= link_to 'Mostrar', balance, class:"btn boton-azul" %></td>
+              <%#<td><%= link_to 'Editar', edit_balance_path(balance), class:"btn boton-amarillo" %>
+              <%#<td><%= link_to 'Eliminar', balance, method: :delete, data: { confirm: 'Está Seguro?' }, class:"btn boton-rojo" %>
+              <td><%= link_to 'Generar Reporte', '#', class:"btn btn-info" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <%= will_paginate @balances, renderer: BootstrapPagination::Rails %>
+
+
+
+      <br>
+      Balances: <%= @balances.count %>
+      <br>
+
+      
+    </div> <%= link_to 'Nuevo Balance', new_balanc_path, class:"btn boton-verde" %>
+  </div>
+</div>

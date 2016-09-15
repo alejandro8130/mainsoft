@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Catalogo de Ropa</span></h1>
+    <br>
+    
+    <div class="col-md-offset-8">
+      <div class="well well-sm">
+        <%= form_tag catalogo_ropas_path, class: "form-inline", role: "form",  method: 'get' do %>
+  	      <label>Nombre: </label>
+  	      <div class="form-group">
+     	      <%= search_field_tag :search, params[:search], :class => "form-control", placeholder: "Ingrese nombre para Buscar", size: "25" %>
+  	      </div>
+  	      <button class="btn btn-primary btn-sm">
+      	    <%= image_tag("search.png") %>
+  	      </button>
+        <% end %>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Valor</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @catalogo_ropas.each do |catalogo_ropa| %>
+            <tr>
+              <td><%= catalogo_ropa.nombre %></td>
+              <td><%= image_tag catalogo_ropa.photo.url(:thumb) %></td>
+              <td><%= catalogo_ropa.valor %></td>
+              <td><%= link_to 'Mostrar', catalogo_ropa, class:"btn boton-azul" %></td>
+              <td><%= link_to 'Editar', edit_catalogo_ropa_path(catalogo_ropa), class:"btn boton-amarillo" %></td>
+              <td><%= link_to 'Eliminar', catalogo_ropa, method: :delete, data: { confirm: 'Está Seguro?' }, class:"btn boton-rojo" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <%= will_paginate @catalogo_ropas, renderer: BootstrapPagination::Rails %>
+
+
+
+      <br>
+      Productos: <%= @catalogo_ropas.count %>
+      <br>
+
+      <%= link_to 'Nuevo Producto', new_catalogo_ropa_path, class:"btn boton-verde" %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center"><p class="titulo-ropa">ROPA</p></h1><br><br><hr>
+    <% c = 0%>
+    <% @catalogo_ropas.each do |catalogo| %>
+      <div class="col-md-4 col-sm-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <p class="texto-ropa text-center"><%= catalogo.nombre %></p>
+          </div>
+          <div class="panel-body">
+            <%= image_tag catalogo.photo.url(:medium),class:"img-responsive" %>
+          </div>
+          <div class="panel-footer footer-azul-oscuro">
+            <p class="texto-ropa text-center"><strong>$<%= catalogo.valor %></strong></p>
+          </div>
+        </div>
+      </div>
+          
+      <% c +=1 %>
+      <% if c == 3 %>
+        <h2 class="texto-invisible">texto invisible</h2>
+        <% c = 0 %>
+      <% end %>
+      
+    <% end %>
+        
+      
+    
+    <div class="col-md-12 col-sm-12">
+      <%= will_paginate @catalogo_ropas, renderer: BootstrapPagination::Rails %>
+    </div>
+
+    <br>
+    <div class="col-md-12 col-sm-12">
+      Productos: <%= @catalogo_ropas.count %>
+    </div>
+    <br>
+        
+  </div>
+</div>

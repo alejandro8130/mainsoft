@@ -1,0 +1,10 @@
+<div class="container bordes-form">
+    <div class="row">
+        <h1 class="text-center texto-formularios"><span class="borde-titulo-form">Editar Cliente</span></h1><hr>
+
+        <%= render 'form', client: @cliente %>
+        
+        <%= link_to 'Mostrar', @cliente, class:"col-md-1 btn btn-info espacio-botones" %> 
+        <%= link_to 'Atrás', clientes_path, class:"col-md-1 col-md-offset-1 btn btn-warning espacio-botones" %>
+    </div>
+</div>
